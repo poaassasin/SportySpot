@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block extrahead %}
+<link href="/static/css/styles.css" rel="stylesheet">
+<link href="/static/css/viewer.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Outfit" rel="stylesheet">
+<style>
+
+      .carousel .carousel-indicators li {  
+        background-color: black; 
+      }
+      .carousel .carousel-indicators li.active { 
+        background-color: #DF7B00; 
+      }
+      
+      .carousel > .carousel-inner > .carousel-item > .card >{
+        max-width:100%;
+        object-fit: contain;
+      }
+      .carousel {
+        overflow:hidden;
+      }
+      
+      .carousel > .carousel-inner {
+        max-width: 580px !important;
+        height:auto;
+      }
+    
+      .carousel > .carousel-inner > .carousel-item {
+        width:auto;
+        height:auto;
+      }
+      .carousel > .carousel-inner > .carousel-item active{
+        width:auto;
+        height:auto;
+      }
+      .card {
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.75);
+        border-radius: 12px;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 40px 20px 0 rgba(0, 0, 0, 0.19);
+        border: 1px solid rgba(209, 213, 219, 0.3);
+        transform: translateZ(0);
+    }
+
+</style>
+{% endblock %}
+{% block navbar %}
+{% include "component/navbar.html" %}
+{% endblock %}
+{% block content %}
+<section>
+    <div class="container" style="height:768px; width:100%;">
+        <div class="row mx-auto d-flex justify-content-center">
+            <h1 class="label label-primary mx-auto" style="color: var(--secondary, #151D24);
+            /* Heading H1 */
+            font-family: Outfit;
+            font-size: 64px;
+            font-style: normal;
+            padding-left:450px;
+            margin-bottom:20px;
+            font-weight: 700;
+            line-height: normal;">Profil Pelatih</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators text-dark">
+                      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First Slide"></li>
+                      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Second Slide"></li>
+                      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Third Slide"></li>
+                    </ol>
+                  <div class="carousel-inner rounded">
+          
+                        <div class="carousel-item active">
+                          <div class="card d-flex shadow-lg p-3 mb-5 mr-5 ml-5 bg-body rounded d-block" >
+                            <img src="/static/Image/picturePelatih1.png"
+                              class="card-img-top d-flex align-items-center" alt="First Slide" style="width: 522px;
+                              height: 456px;
+                              flex-shrink: 0; object-fit: contain;" />
+                          </div>
+                        </div>
+            
+                        <div class="carousel-item">
+                          <div class="card d-flex shadow-lg p-3 mb-5 mr-5 ml-5 bg-body rounded d-block">
+                            <img src="/static/Image/picturePelatih2.png"
+                              class="card-img-top d-flex align-items-center" alt="Second Slide" style="width: 522px;
+                              height: 456px;
+                              flex-shrink: 0; object-fit: contain;"/>
+                          </div>
+                        </div>
+    
+                        <div class="carousel-item">
+                          <div class="card d-flex shadow-lg p-3 mb-5 mr-5 ml-5 bg-body rounded d-block">
+                            <img src="/static/Image/picturePelatih3.png"
+                              class="card-img-top d-flex align-items-center" alt="Third Slide" style="width: 522px;
+                              height: 456px;
+                              flex-shrink: 0; object-fit: contain;"/>
+                          </div>
+                        </div>
+            
+                      <a class="carousel-control-prev text-dark" role="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 81 80" fill="none">
+                                <g filter="url(#filter0_d_342_3036)">
+                                  <circle cx="40.25" cy="45" r="30" transform="rotate(-180 40.25 45)" fill="#DF7B00"/>
+                                </g>
+                                <path d="M47.9161 59.647C48.1302 59.4162 48.25 59.1063 48.25 58.7837C48.25 58.4611 48.1302 58.1513 47.9161 57.9205L35.9568 45L47.9161 32.0821C48.1302 31.8513 48.25 31.5415 48.25 31.2189C48.25 30.8962 48.1302 30.5864 47.9161 30.3556C47.8121 30.2431 47.6877 30.1536 47.5502 30.0925C47.4128 30.0315 47.2652 30 47.116 30C46.9669 30 46.8192 30.0315 46.6818 30.0925C46.5444 30.1536 46.42 30.2431 46.316 30.3556L33.5984 44.098C33.375 44.3393 33.25 44.663 33.25 45C33.25 45.337 33.375 45.6607 33.5984 45.902L46.316 59.6444C46.42 59.7569 46.5444 59.8464 46.6818 59.9075C46.8192 59.9685 46.9669 60 47.116 60C47.2652 60 47.4128 59.9685 47.5502 59.9075C47.6877 59.8464 47.8121 59.7569 47.9161 59.6444V59.647Z" fill="#FAFAFA"/>
+                                <defs>
+                                  <filter id="filter0_d_342_3036" x="0.25" y="0" width="80" height="80" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="-5"/>
+                                    <feGaussianBlur stdDeviation="5"/>
+                                    <feComposite in2="hardAlpha" operator="out"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_342_3036"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_342_3036" result="shape"/>
+                                  </filter>
+                                </defs>
+                              </svg>
+                        </span>
+                      </a>
+                      <a class="carousel-control-next text-dark" role="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="next">
+                        <span class="carousel-control" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 81 80" fill="none">
+                            <g filter="url(#filter0_d_342_3033)">
+                              <circle cx="40.25" cy="45" r="30" fill="#DF7B00"/>
+                            </g>
+                            <path d="M32.5839 30.353C32.3698 30.5838 32.25 30.8937 32.25 31.2163C32.25 31.5389 32.3698 31.8487 32.5839 32.0795L44.5432 45L32.5839 57.9179C32.3698 58.1487 32.25 58.4585 32.25 58.7811C32.25 59.1038 32.3698 59.4136 32.5839 59.6444C32.6879 59.7569 32.8123 59.8464 32.9498 59.9075C33.0872 59.9685 33.2348 60 33.384 60C33.5331 60 33.6808 59.9685 33.8182 59.9075C33.9556 59.8464 34.08 59.7569 34.184 59.6444L46.9016 45.902C47.125 45.6607 47.25 45.337 47.25 45C47.25 44.663 47.125 44.3393 46.9016 44.098L34.184 30.3556C34.08 30.2431 33.9556 30.1536 33.8182 30.0925C33.6808 30.0315 33.5331 30 33.384 30C33.2348 30 33.0872 30.0315 32.9498 30.0925C32.8123 30.1536 32.6879 30.2431 32.5839 30.3556V30.353Z" fill="#FAFAFA"/>
+                            <defs>
+                              <filter id="filter0_d_342_3033" x="0.25" y="0" width="80" height="80" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dy="-5"/>
+                                <feGaussianBlur stdDeviation="5"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_342_3033"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_342_3033" result="shape"/>
+                              </filter>
+                            </defs>
+                          </svg>
+                        </span>
+                      </a>
+                 </div>
+                </div>
+            </div>
+            <div class="col">
+                <span class="label" style="color: var(--secondary, #151D24);
+                /* Body/L/Regular */
+                font-family: Outfit;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 35px; /* 145.833% */">Nama : {{ pelatih.nama}}</span></br>
+                <span class="label" style="color: var(--secondary, #151D24);
+                /* Body/L/Regular */
+                font-family: Outfit;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 35px; /* 145.833% */">Alamat : {{ pelatih.alamat}}</span></br>
+                <span class="label" style="color: var(--secondary, #151D24);
+                /* Body/L/Regular */
+                font-family: Outfit;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 35px; /* 145.833% */">Nomor Telepon : {{ pelatih.telp}}</span></br>
+                <span class="label" style="color: var(--secondary, #151D24);
+                /* Body/L/Regular */
+                font-family: Outfit;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 35px; /* 145.833% */">Email : {{ pelatih.email}}</span></br>
+                <div class="row">
+                    <span class="label" style="color: var(--secondary, #151D24);
+                /* Body/L/Regular */
+                font-family: Outfit;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 35px; /* 145.833% */">{{ pelatih.deskripsi}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block footer %}
+{% include "component/footer.html" %}
+{% endblock %}
