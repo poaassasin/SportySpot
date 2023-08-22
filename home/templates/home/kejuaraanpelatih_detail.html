@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'home_KejuaraanPelatih_list' %}">
+    KejuaraanPelatih Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>tahun</td><td>{{ object.tahun }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>kejuaraan</td><td>{{ object.kejuaraan }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>medali</td><td>{{ object.medali }}</td></tr>
+    <tr><td>foto</td><td>{{ object.foto }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

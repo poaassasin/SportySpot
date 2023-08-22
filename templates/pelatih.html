@@ -4,10 +4,15 @@
 <link href="/static/css/viewer.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Outfit" rel="stylesheet">
 <style>
-
-      .carousel .carousel-indicators li {  
-        background-color: black; 
+      .skillPelatih {
+        width:1440px;
+        height:270px;
+        flex-direction: column;
+        padding: 99px 300px;
+        align-items: center;
+        gap: 52px;
       }
+      
       .carousel .carousel-indicators li.active { 
         background-color: #DF7B00; 
       }
@@ -42,6 +47,17 @@
         border: 1px solid rgba(209, 213, 219, 0.3);
         transform: translateZ(0);
     }
+    .reveal{
+      position: relative;
+      transform: translateY(150px);
+      opacity: 0;
+      transition: 1s all ease;
+    }
+    
+    .reveal.active{
+      transform: translateY(0);
+      opacity: 1;
+    }
 
 </style>
 {% endblock %}
@@ -50,9 +66,9 @@
 {% endblock %}
 {% block content %}
 <section>
-    <div class="container" style="height:768px; width:100%;">
-        <div class="row mx-auto d-flex justify-content-center">
-            <h1 class="label label-primary mx-auto" style="color: var(--secondary, #151D24);
+    <div class="container reveal" style="height:768px; width:100%;">
+        <div class="row mx-auto d-flex justify-content-center reveal">
+            <h1 class="label label-primary mx-auto text-dark link-dark" style="color: var(--secondary, #151D24);
             /* Heading H1 */
             font-family: Outfit;
             font-size: 64px;
@@ -65,15 +81,15 @@
         <div class="row">
             <div class="col">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <ol class="carousel-indicators text-dark">
-                      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First Slide"></li>
-                      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Second Slide"></li>
-                      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Third Slide"></li>
+                    <ol class="carousel-indicators">
+                      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="active" aria-current="true" aria-label="First Slide"></li>
+                      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="link-dark text-white" aria-label="Second Slide"></li>
+                      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="link-dark text-white"aria-label="Third Slide"></li>
                     </ol>
                   <div class="carousel-inner rounded">
           
                         <div class="carousel-item active">
-                          <div class="card d-flex shadow-lg p-3 mb-5 mr-5 ml-5 bg-body rounded d-block" >
+                          <div class="card d-flex shadow-sm p-3 mb-5 mr-5 ml-5 bg-body rounded d-block" >
                             <img src="/static/Image/picturePelatih1.png"
                               class="card-img-top d-flex align-items-center" alt="First Slide" style="width: 522px;
                               height: 456px;
@@ -82,7 +98,7 @@
                         </div>
             
                         <div class="carousel-item">
-                          <div class="card d-flex shadow-lg p-3 mb-5 mr-5 ml-5 bg-body rounded d-block">
+                          <div class="card d-flex shadow-sm p-3 mb-5 mr-5 ml-5 bg-body rounded d-block">
                             <img src="/static/Image/picturePelatih2.png"
                               class="card-img-top d-flex align-items-center" alt="Second Slide" style="width: 522px;
                               height: 456px;
@@ -91,7 +107,7 @@
                         </div>
     
                         <div class="carousel-item">
-                          <div class="card d-flex shadow-lg p-3 mb-5 mr-5 ml-5 bg-body rounded d-block">
+                          <div class="card d-flex shadow-sm p-3 mb-5 mr-5 ml-5 bg-body rounded d-block">
                             <img src="/static/Image/picturePelatih3.png"
                               class="card-img-top d-flex align-items-center" alt="Third Slide" style="width: 522px;
                               height: 456px;
@@ -99,8 +115,8 @@
                           </div>
                         </div>
             
-                      <a class="carousel-control-prev text-dark" role="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="prev">
+                      <a class="carousel-control-prev text-dark link-dark" role="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
                         <span class="carousel-control" aria-hidden="true">
                             <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 81 80" fill="none">
                                 <g filter="url(#filter0_d_342_3036)">
@@ -122,7 +138,7 @@
                               </svg>
                         </span>
                       </a>
-                      <a class="carousel-control-next text-dark" role="button" data-bs-target="#carouselExampleIndicators"
+                      <a class="carousel-control-next text-dark link-dark" role="button" data-bs-target="#carouselExampleIndicators"
                         data-bs-slide-to="next">
                         <span class="carousel-control" aria-hidden="true">
                             <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 81 80" fill="none">
@@ -149,28 +165,28 @@
                 </div>
             </div>
             <div class="col">
-                <span class="label" style="color: var(--secondary, #151D24);
+                <span class="label text-dark link-dark" style="color: var(--secondary, #151D24);
                 /* Body/L/Regular */
                 font-family: Outfit;
                 font-size: 24px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 35px; /* 145.833% */">Nama : {{ pelatih.nama}}</span></br>
-                <span class="label" style="color: var(--secondary, #151D24);
+                <span class="label text-dark link-dark" style="color: var(--secondary, #151D24);
                 /* Body/L/Regular */
                 font-family: Outfit;
                 font-size: 24px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 35px; /* 145.833% */">Alamat : {{ pelatih.alamat}}</span></br>
-                <span class="label" style="color: var(--secondary, #151D24);
+                <span class="label text-dark link-dark" style="color: var(--secondary, #151D24);
                 /* Body/L/Regular */
                 font-family: Outfit;
                 font-size: 24px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 35px; /* 145.833% */">Nomor Telepon : {{ pelatih.telp}}</span></br>
-                <span class="label" style="color: var(--secondary, #151D24);
+                <span class="label text-dark link-dark" style="color: var(--secondary, #151D24);
                 /* Body/L/Regular */
                 font-family: Outfit;
                 font-size: 24px;
@@ -178,7 +194,7 @@
                 font-weight: 400;
                 line-height: 35px; /* 145.833% */">Email : {{ pelatih.email}}</span></br>
                 <div class="row">
-                    <span class="label" style="color: var(--secondary, #151D24);
+                    <span class="label text-dark link-dark" style="color: var(--secondary, #151D24);
                 /* Body/L/Regular */
                 font-family: Outfit;
                 font-size: 24px;
@@ -189,8 +205,67 @@
             </div>
         </div>
     </div>
+    {% comment %} <div class="row mx-auto d-flex" style ="
+          background: var(--secondary, #151D24);">
+        <div class="skillPelatih mx-auto">
+          <div class="row mx-auto d-flex">
+            <div class="col mx-auto d-flex">
+              <h1 class="text-center mx-auto" style = "color: var(--primary, #FAFAFA);
+
+              /* Heading H1 */
+              font-family: Outfit;
+              font-size: 64px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              text-align:center">Skill</h1>
+            </div>
+          </div>
+          <div class="row mx-auto d-flex">
+            <div class="col mx-auto d-flex">
+              <h5 class="text-center mx-auto" style = "color: var(--primary, #FAFAFA);
+              font-family: Outfit;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 300;
+              line-height: 35px; /* 145.833% */">Skill dalam Olahraga Senam</h5>
+            </div>
+          </div>
+          <div class="row mx-auto d-flex">
+            <div class="col">
+              <div class="row">
+                <div class="col-3">
+                <span class="text-center mx-auto" style ="color: var(--primary, #FAFAFA);
+
+                /* Heading H3 */
+                font-family: Outfit;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;">Senam Pilates</span>
+                <div class="col-2">
+                  <span class="text-center mx-auto" style ="stroke-width: 3px;
+                    stroke: var(--button, #DF7B00); width: 181px;
+                    height: 0px;"><svg xmlns="http://www.w3.org/2000/svg" width="185" height="4" viewBox="0 0 185 4" fill="none">
+                      <path d="M2 2H183" stroke="#DF7B00" stroke-width="3" stroke-linecap="round"/>
+                    </svg></span
+               </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                s
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div> {% endcomment %}
 </section>
 {% endblock %}
 {% block footer %}
 {% include "component/footer.html" %}
 {% endblock %}
+<script src="/static/js/onscroll.js"></script>

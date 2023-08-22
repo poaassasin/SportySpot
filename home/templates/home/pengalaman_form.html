@@ -1,0 +1,60 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'home_pengalaman_list' %}">
+    pengalaman Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="nama_pengalaman">nama_pengalaman: </label>
+      <input class="form-control col-sm-10"
+         id="nama_pengalaman" type="text"
+         name="nama_pengalaman" value="{{ object.nama_pengalaman }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="periode">periode: </label>
+      <input class="form-control col-sm-10"
+         id="periode" type="text"
+         name="periode" value="{{ object.periode }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="keterangan">keterangan: </label>
+      <input class="form-control col-sm-10"
+         id="keterangan" type="text"
+         name="keterangan" value="{{ object.keterangan }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="created">created: </label>
+      <input class="form-control col-sm-10"
+         id="created" type="datetime-local"
+         name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="foto">foto: </label>
+      <input class="form-control col-sm-10"
+         id="foto" type="file"
+         name="foto" value="{{ object.foto }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+      <input class="form-control col-sm-10"
+         id="last_updated" type="datetime-local"
+         name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="tahun">tahun: </label>
+      <input class="form-control col-sm-10"
+         id="tahun" type="text"
+         name="tahun" value="{{ object.tahun }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

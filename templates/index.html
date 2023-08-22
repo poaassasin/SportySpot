@@ -9,6 +9,18 @@
     font-family: 'Outfit';
   }
 
+  .reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
   /* .footer {
     padding-left: 34px;
     padding-top: 145px;
@@ -19,9 +31,64 @@
   } */
 
   .banner1 {
-    background-color: #FFFFFF !important;
-    min-height: 814px !important;
+    min-height: 847px !important;
     max-width: 100% !important;
+
+  }
+
+  .banner2 {
+    background-size: cover;
+  }
+
+  .banner2 {
+    max-width: 100% !important;
+    height:650px !important;
+    {% comment %} background-image: url("/static/Image/bg banner 2.png"); {% endcomment %}
+    background: var(--primary, #FAFAFA);
+    background-size: cover;
+  }
+
+  .dekorBnr2 {
+    border-radius: 50px 50px 0px 0px;
+    background: var(--secondary, #151D24);
+    width: 100%;
+    height: 250px;
+    top: 70%;
+    z-index:1;
+    position: absolute;
+  }
+
+  .banner3 {
+    max-width: 100% !important;
+    background: var(--secondary, #151D24);
+    background-size: cover;
+    height: 1490px !important;
+
+  }
+
+  .buttonCardMain {
+    display: flex;
+    margin:auto;
+    max-width: 50%;
+    padding: 15px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: var(--button, #DF7B00);
+  }
+
+  .kategori {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+  }
+
+  .banner4 {
+    min-height: 800px;
+    max-width: 100% !important;
+
   }
 
   .background {
@@ -118,6 +185,26 @@
     display: none;
     color: #333;
   }
+
+  .btn-outline-primary {
+    --bs-btn-color: #DF7B00;
+    --bs-btn-border-color: #DF7B00;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #DF7B00;
+    --bs-btn-hover-border-color: #DF7B00;
+    --bs-btn-focus-shadow-rgb: 13,110,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #DF7B00;
+    --bs-btn-active-border-color: #DF7B00;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #DF7B00;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #DF7B00;
+    --bs-gradient: none;
+}
+
+
+
 </style>
 {% endblock %}
 {% block navbar %}
@@ -126,9 +213,147 @@
 {% block content %}
 {% include "component/banner1.html" %}
 {% include "component/banner2.html" %}
+{% include "component/banner3.html" %}
+{% include "component/banner4.html" %}
 {% endblock %}
 {% block footer %}
 {% include "component/footer.html" %}
 {% endblock %}
 {% block script %}
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  $(document).ready(function () {
+    const CHART_COLORS = {
+      red: 'rgb(255, 99, 132)',
+      orange: 'rgb(255, 159, 64)',
+      yellow: 'rgb(255, 205, 86)',
+      green: 'rgb(75, 192, 192)',
+      blue: 'rgb(54, 162, 235)',
+      purple: 'rgb(153, 102, 255)',
+      grey: 'rgb(201, 203, 207)'
+    };
+    const context1 = document.getElementById('c');
+    const context2 = document.getElementById('d');
+    const context3 = document.getElementById('e');
+
+    data1 = [15,35,17,30,5,38,16,8]
+    label1 = [2008,2009,2010,2011,2012,2013,2014,2015]
+    data2 = [10,40,17,30,5,38,15,9]
+    label2 = [2008,2009,2010,2011,2012,2013,2014,2015]
+    data3 = [30,40,10,20,7,30,14,11]
+    label3 = [2008,2009,2010,2011,2012,2013,2014,2015]
+
+    new Chart(context1, {
+      type: 'line',
+      data: {
+        labels: label1,
+        datasets: [{
+          label: 'Jumlah Prestasi',
+          data: data1,
+          borderWidth: 2,
+          borderColor: CHART_COLORS.red,
+          cubicInterpolationMode: 'monotone',
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    new Chart(context2, {
+      type: 'line',
+      data: {
+        labels: label2,
+        datasets: [{
+          label: 'Jumlah Prestasi',
+          data: data2,
+          borderWidth: 2,
+          borderColor: CHART_COLORS.orange,
+          cubicInterpolationMode: 'monotone',
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    new Chart(context3, {
+      type: 'line',
+      data: {
+        labels: label3,
+        datasets: [{
+          label: 'Jumlah Prestasi',
+          data: data3,
+          borderWidth: 2,
+          borderColor: CHART_COLORS.yellow,
+          cubicInterpolationMode: 'monotone',
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  });
+</script>
+<script>
+  var words = ['Find Your<br>Sports', 'Championship', 'Passion', 'Love', 'Integrity'],
+    part,
+    i = 0,
+    offset = 0,
+    len = words.length,
+    forwards = true,
+    skip_count = 0,
+    skip_delay = 15,
+    speed = 70;
+var wordflick = function () {
+  setInterval(function () {
+    if (forwards) {
+      if (offset >= words[i].length) {
+        ++skip_count;
+        if (skip_count == skip_delay) {
+          forwards = false;
+          skip_count = 0;
+        }
+      }
+    }
+    else {
+      if (offset == 0) {
+        forwards = true;
+        i++;
+        offset = 0;
+        if (i >= len) {
+          i = 0;
+        }
+      }
+    }
+    part = words[i].substr(0, offset);
+    if (skip_count == 0) {
+      if (forwards) {
+        offset++;
+      }
+      else {
+        offset--;
+      }
+    }
+    $('.word').html(part);
+  },speed);
+};
+
+$(document).ready(function () {
+  wordflick();
+});
+</script>
 {% endblock %}

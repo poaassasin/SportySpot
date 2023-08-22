@@ -1,0 +1,60 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'home_Pelatih_list' %}">
+    Pelatih Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+      <input class="form-control col-sm-10"
+         id="last_updated" type="datetime-local"
+         name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="nama">nama: </label>
+      <input class="form-control col-sm-10"
+         id="nama" type="text"
+         name="nama" value="{{ object.nama }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="alamat">alamat: </label>
+      <input class="form-control col-sm-10"
+         id="alamat" type="text"
+         name="alamat" value="{{ object.alamat }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="deskripsi">deskripsi: </label>
+      <input class="form-control col-sm-10"
+         id="deskripsi" type="text"
+         name="deskripsi" value="{{ object.deskripsi }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="created">created: </label>
+      <input class="form-control col-sm-10"
+         id="created" type="datetime-local"
+         name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="telp">telp: </label>
+      <input class="form-control col-sm-10"
+         id="telp" type="text"
+         name="telp" value="{{ object.telp }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="email">email: </label>
+      <input class="form-control col-sm-10"
+         id="email" type="text"
+         name="email" value="{{ object.email }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

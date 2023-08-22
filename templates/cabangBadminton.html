@@ -4,6 +4,251 @@
 <link href="/static/css/viewer.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Outfit" rel="stylesheet">
 <style>
+
+  .reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .cardCabor {
+    margin-left: 1rem;
+    height: 90%;
+    scroll-snap-align: start;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    transform: translateZ(0);
+    background-color: rgb(255, 255, 255);
+    /* shadow 1 */
+    box-shadow: 0px 2px 2px 2px rgba(45, 45, 45, 0.20);
+  }
+
+  /* .cabor-top .label h1 {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  .cabor-content .cabor-text {
+    margin: 50px 0;
+  }
+
+  .cabor-timeline {
+    background-color: yellow;
+    margin-top: 20px;
+  }
+
+  .cabor-timeline .experience h4 {
+    text-align: center;
+  }
+
+  .cabor-timeline .experience {
+    margin-top: 5%;
+    width: 100%;
+    /* background-color: #3b8472;*/
+    height: auto;
+
+  }
+
+  .cabor-timeline .experience h5 {
+    color: #008080;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+
+  .cabor-timeline .experience ol,
+  .experience ul {
+    list-style: none;
+  }
+
+  .cabor-timeline .experience a {
+    text-decoration: none;
+  }
+
+  /* .cabor-timeline .experience img {
+    width: 20%;
+    float: right;
+  }
+
+  .cabor-timeline .experience .fa {
+    color: #40E0D0;
+    font-size: 35px;
+  }
+
+  .cabor-timeline .experience .fa-users {
+    font-size: 30px;
+  }
+
+  .cabor-timeline .cd-horizontal-timeline {
+    opacity: 0;
+    margin: 2em auto;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+  }
+
+  .cabor-timeline .cd-horizontal-timeline::before {
+    /* never visible - this is used in jQuery to check the current MQ */
+  /* content: 'mobile';
+  display: none;
+  } */
+
+  /* .cabor-timeline .cd-horizontal-timeline.loaded { */
+  /* show the timeline after events position has been set (using JavaScript) */
+  /* opacity: 1; */
+  /* } */
+
+  .cabor-timeline .cd-horizontal-timeline .timeline {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    /*  max-width: 425px; */
+    margin: 0 auto;
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .events-wrapper {
+    position: relative;
+    height: 100%;
+    margin: 0 40px;
+    overflow: hidden;
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .events-wrapper::after,
+  .cd-horizontal-timeline .events-wrapper::before {
+    /* these are used to create a shadow effect at the sides of the timeline */
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    height: 100%;
+    width: 20px;
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .events-wrapper::before {
+    left: 0;
+    background-image: -webkit-linear-gradient(left, #f8f8f8, rgba(248, 248, 248, 0));
+    background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .events-wrapper::after {
+    right: 0;
+    background-image: -webkit-linear-gradient(right, #f8f8f8, rgba(248, 248, 248, 0));
+    background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .events {
+    /* this is the grey line/timeline */
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 49px;
+    height: 2px;
+    /* width will be set using JavaScript */
+    background: #dfdfdf;
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform 0.4s;
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .filling-line {
+    /* this is used to create the green line filling the timeline */
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #008080;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -ms-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .events a {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    text-align: center;
+    font-size: 1.3rem;
+    padding-bottom: 15px;
+    color: #383838;
+    /* fix bug on Safari - text flickering while timeline translates */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .events a::after {
+    /* this is used to create the event spot */
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: -5px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: 2px solid #dfdfdf;
+    background-color: #f8f8f8;
+    -webkit-transition: background-color 0.3s, border-color 0.3s;
+    -moz-transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+
+  /* .cabor-timeline .no-touch .cd-horizontal-timeline .events a:hover::after {
+    background-color: #008080;
+    border-color: #008080;
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .events a.selected {
+    pointer-events: none;
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .events a.selected::after {
+    background-color: #008080;
+    border-color: #008080;
+  }
+
+  .cabor-timeline .cd-horizontal-timeline .events a.older-event::after {
+    border-color: #008080;
+  } */
+
+  .wrapperCabor {
+    min-height: 50vh;
+    max-width: 800px;
+    margin: auto;
+  }
 </style>
 {% endblock %}
 {% block navbar %}
@@ -11,9 +256,233 @@
 {% endblock %}
 {% block content %}
 <section>
-    
+  <div class="section-cabor container">
+    <div class="cabor-content">
+      <div class="cabor-top">
+        <div class="row mx-auto d-flex justify-content-center">
+          <h1 class="label label-primary mx-auto m-2 text-dark link-dark" style="color: var(--secondary, #151D24);
+                            /* Heading H1 */
+                            font-family: Outfit;
+                            font-size: 64px;
+                            font-style: normal;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-bottom:30px;
+                            font-weight: 700;
+                            line-height: normal;">Sejarah Badminton</h1>
+        </div>
+        <div class="wrapperCabor">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators text-dark">
+              <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="First Slide"></li>
+              <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Second Slide"></li>
+            </ol>
+            <div class="carousel-inner rounded">
+
+              <div class="carousel-item active">
+                <div class="cardCabor d-flex mx-auto bg-body rounded d-block">
+                  <img src="/static/Image/badmintonkejuaraan.png"
+                    alt="First Slide" style="width: 100%;
+                                                        height: 100%;
+                                                        ;" />
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="cardCabor d-flex mx-auto bg-body rounded d-block">
+                  <img src="/static/Image/badmintonkejuaraan2.png"
+                    alt="Second Slide" style="width: 100%;
+                                                        height: 100%;
+                                                        " />
+                </div>
+              </div>
+
+
+              <a class="carousel-control-prev text-dark" role="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 81 80" fill="none">
+                    <g filter="url(#filter0_d_342_3036)">
+                      <circle cx="40.25" cy="45" r="30" transform="rotate(-180 40.25 45)" fill="#DF7B00" />
+                    </g>
+                    <path
+                      d="M47.9161 59.647C48.1302 59.4162 48.25 59.1063 48.25 58.7837C48.25 58.4611 48.1302 58.1513 47.9161 57.9205L35.9568 45L47.9161 32.0821C48.1302 31.8513 48.25 31.5415 48.25 31.2189C48.25 30.8962 48.1302 30.5864 47.9161 30.3556C47.8121 30.2431 47.6877 30.1536 47.5502 30.0925C47.4128 30.0315 47.2652 30 47.116 30C46.9669 30 46.8192 30.0315 46.6818 30.0925C46.5444 30.1536 46.42 30.2431 46.316 30.3556L33.5984 44.098C33.375 44.3393 33.25 44.663 33.25 45C33.25 45.337 33.375 45.6607 33.5984 45.902L46.316 59.6444C46.42 59.7569 46.5444 59.8464 46.6818 59.9075C46.8192 59.9685 46.9669 60 47.116 60C47.2652 60 47.4128 59.9685 47.5502 59.9075C47.6877 59.8464 47.8121 59.7569 47.9161 59.6444V59.647Z"
+                      fill="#FAFAFA" />
+                    <defs>
+                      <filter id="filter0_d_342_3036" x="0.25" y="0" width="80" height="80" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset dy="-5" />
+                        <feGaussianBlur stdDeviation="5" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_342_3036" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_342_3036" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                </span>
+              </a>
+              <a class="carousel-control-next text-dark" role="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="next">
+                <span class="carousel-control" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 81 80" fill="none">
+                    <g filter="url(#filter0_d_342_3033)">
+                      <circle cx="40.25" cy="45" r="30" fill="#DF7B00" />
+                    </g>
+                    <path
+                      d="M32.5839 30.353C32.3698 30.5838 32.25 30.8937 32.25 31.2163C32.25 31.5389 32.3698 31.8487 32.5839 32.0795L44.5432 45L32.5839 57.9179C32.3698 58.1487 32.25 58.4585 32.25 58.7811C32.25 59.1038 32.3698 59.4136 32.5839 59.6444C32.6879 59.7569 32.8123 59.8464 32.9498 59.9075C33.0872 59.9685 33.2348 60 33.384 60C33.5331 60 33.6808 59.9685 33.8182 59.9075C33.9556 59.8464 34.08 59.7569 34.184 59.6444L46.9016 45.902C47.125 45.6607 47.25 45.337 47.25 45C47.25 44.663 47.125 44.3393 46.9016 44.098L34.184 30.3556C34.08 30.2431 33.9556 30.1536 33.8182 30.0925C33.6808 30.0315 33.5331 30 33.384 30C33.2348 30 33.0872 30.0315 32.9498 30.0925C32.8123 30.1536 32.6879 30.2431 32.5839 30.3556V30.353Z"
+                      fill="#FAFAFA" />
+                    <defs>
+                      <filter id="filter0_d_342_3033" x="0.25" y="0" width="80" height="80" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset dy="-5" />
+                        <feGaussianBlur stdDeviation="5" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_342_3033" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_342_3033" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cabor-text container reveal text-dark link-dark">
+          <h5>Badminton memiliki akar sejarah yang panjang dan beragam. Permainan yang menyerupai badminton modern
+            pertama
+            kali
+            diketahui dimainkan di India pada abad ke-19, dikenal sebagai "Poona" atau "Poonah." Permainan ini kemudian
+            diperkenalkan ke Inggris oleh tentara Britania yang bertugas di India.
+            Di Inggris, Poona menjadi populer di kalangan elit dan disesuaikan menjadi permainan yang lebih formal
+            dengan
+            aturan
+            yang terstruktur. Namun, istilah "Badminton" berasal dari nama sebuah rumah di Gloucestershire, Inggris, di
+            mana
+            permainan tersebut disempurnakan dan diberi nama pada tahun 1873. Badminton secara resmi diakui sebagai
+            olahraga
+            di
+            Inggris pada tahun 1893 dengan pembentukan Badminton Association of England.
+            Sejarah badminton di Indonesia dimulai pada akhir abad ke-19 ketika olahraga ini diperkenalkan oleh seorang
+            pejabat
+            Inggris bernama George Alan Thomas. Permainan tersebut awalnya hanya dimainkan oleh kalangan elit, tetapi
+            seiring
+            berjalannya waktu, olahraga ini semakin populer di kalangan masyarakat Indonesia.
+
+            Pada tahun 1947, sebuah klub badminton pertama di Indonesia didirikan dengan nama "Aston Bandung Badminton
+            Club."
+            Kemudian, pada 24 Mei 1951, badminton di Indonesia mendapatkan tonggak sejarah penting dengan pembentukan
+            Persatuan
+            Badminton Seluruh Indonesia (PBSI). PBSI didirikan dengan tujuan untuk mengorganisasi dan mengembangkan
+            olahraga
+            bulu
+            tangkis di seluruh wilayah Indonesia.
+
+            Setelah pembentukan PBSI, olahraga badminton semakin berkembang pesat di Indonesia. Para pemain muda
+            berbakat
+            didorong
+            untuk berlatih dan berkompetisi secara profesional. Pada dekade 1950-an hingga 1970-an, Indonesia mulai
+            mencatat
+            prestasi gemilang di arena internasional.
+
+            Sejak era kejayaan tersebut, badminton tetap menjadi olahraga yang populer di Indonesia. Negara ini terus
+            mencetak
+            pemain-pemain berbakat dan menjadi kekuatan yang patut diperhitungkan dalam kancah bulu tangkis dunia.
+            Sejarah
+            badminton
+            di Indonesia tetap menggambarkan semangat dan dedikasi dalam mengembangkan dan memajukan olahraga ini, serta
+            memberikan
+            kebanggaan bagi bangsa Indonesia.s</h5>
+        </div>
+      </div>
+
+    </div>
+    <div class="cabor-timeline container reveal">
+      <div class="container experience">
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Perkembangan Badminton Indonesia</h4>
+
+            <section class="cd-horizontal-timeline container">
+              <div class="timeline">
+                <div class="events-wrapper">
+                  <div class="events">
+                    <ol>
+                      <li><a href="#0" data-date="1958" class="selected">
+                          &nbsp;</a></li>
+                      <li><a href="#0" data-date="1957"></a></li>
+                      <li><a href="#0" data-date="1960-1966"></a>
+                      </li>
+                    </ol>
+
+                    <span class="filling-line" aria-hidden="true"></span>
+                  </div> <!-- .events -->
+                </div> <!-- .events-wrapper -->
+              </div> <!-- .timeline -->
+
+              <div class="events-content">
+                <ol>
+                  <li class="selected" data-date="01/05/2015">
+                    <h5>Kemenangan Thomas Cup Pertama (1958)<img src="img/bnp_paribas.png"></h5>
+                    <em>MAtlet : Tan Joe Hok (Bandung), Eddy Joesoef (Jakarta), Lie Poo Djian (Purwokerto), Tan King
+                      Gwan (Salatiga), Njoo Kiem
+                      Bie (Surabaya), Olich Solichin (Tasikmalaya), serta Ferry Sonneville</em>
+
+                    <p>Pada tahun 1958, Tim bulu tangkis Indonesia berhasil meraih gelar pertamanya dalam ajang Thomas
+                      Cup, yang merupakan turnamen beregu pria terkemuka di dunia bulu tangkis. Indonesia berhasil
+                      mengalahkan tim China dengan skor 7-2 di final dan meraih gelar juara untuk pertama kalinya.
+                      Prestasi ini menjadi awal kejayaan Indonesia dalam ajang Thomas Cup.</p>
+                    <br>
+
+                  <li data-date="01/03/2014">
+                    <h5>Kemenangan Thomas Cup Pertama (1957)<img src="img/paginas_amarelas.png"></h5>
+                    <em>Atlet : Tan Joe Hok (Bandung), Eddy Joesoef (Jakarta), Lie Poo Djian (Purwokerto), Tan King Gwan
+                      (Salatiga), Njoo Kiem
+                      Bie (Surabaya), Olich Solichin (Tasikmalaya), serta Ferry Sonneville</em>
+                    <p>Pada tahun 1958, Tim bulu tangkis Indonesia berhasil meraih gelar pertamanya dalam ajang Thomas
+                      Cup, yang merupakan
+                      turnamen beregu pria terkemuka di dunia bulu tangkis. Indonesia berhasil mengalahkan tim China
+                      dengan skor 7-2 di final
+                      dan meraih gelar juara untuk pertama kalinya. Prestasi ini menjadi awal kejayaan Indonesia dalam
+                      ajang Thomas Cup.</p>
+                  </li>
+
+                  <li data-date="01/02/2013">
+                    <h5>Dominasi Thomas Cup (1960-1966)<img src="img/paginas_amarelas.png"></h5>
+                    <!-- <em>February 2013 - March 2014</em> -->
+                    <p>Setelah kemenangan pada tahun 1958, Indonesia mempertahankan dominasinya dalam Thomas Cup dengan
+                      meraih gelar juara pada
+                      empat edisi berikutnya yaitu tahun 1960, 1961, 1964, dan 1966. Tim bulu tangkis Indonesia saat itu
+                      dipimpin oleh para
+                      legenda seperti Ferry Sonneville, Tan Joe Hok, dan Rudy Hartono yang menjadi sosok penting dalam
+                      kesuksesan Indonesia di
+                      ajang ini.</p>
+                  </li>
+                </ol>
+              </div> <!-- .events-content -->
+            </section>
+
+          </div> <!-- end div experience -->
+        </div> <!-- end row experience -->
+      </div> <!-- end container experience -->
+
+      <!-- end work experience -->
+    </div>
+
+  </div>
 </section>
 {% endblock %}
 {% block footer %}
 {% include "component/footer.html" %}
 {% endblock %}
+<script src="/static/js/onscroll.js"></script>

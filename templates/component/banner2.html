@@ -1,36 +1,86 @@
-<section>
-    <div class="row mx-auto">
-        <div class="col mx-auto" style="
-        /* position: absolute; */
-        top: 50%;
-        right: 50%;
-        /* margin: -25px 0 0 -25px; */
-        ">
-            <h1>Perkembangan Olahraga Indonesia</h1>
-            <div class="wrapper mx-auto">
-                <canvas id='c'></canvas>
-                <div class="label"></div>
-            </div>
+<section class="banner2 bg-dark">
+    <div class="row mx-auto reveal">
+      
+        <div class="col mx-auto" style="position: relative; z-index:2;">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="position:relative; z-index:4;">
+              
+              <div class="carousel-inner rounded">
+                  <div class="carousel-item active text-dark text-light">
+                      <h1 style="font-family: Outfit;
+                      font-size: 64px; margin-top:90px; margin-bottom: 60px;text-align: center; font-weight: 700;">Perkembangan Olahraga Sepak Bola</h1>
+                      <div class="wrapper mx-auto">
+                          <canvas id='c'></canvas>
+                          <div class="label"></div>
+                      </div>
+                  </div>
+                  <div class="carousel-item text-dark text-light">
+                      <h1 style="font-family: Outfit;
+                      font-size: 64px; margin-top:90px; margin-bottom: 60px;text-align: center; font-weight: 700;">Perkembangan Olahraga Basket</h1>
+                      <div class="wrapper mx-auto">
+                          <canvas id='d'></canvas>
+                          <div class="label"></div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <h1 style="font-family: Outfit;
+                      font-size: 64px; margin-top:90px; margin-bottom: 60px;text-align: center; font-weight: 700;">Perkembangan Olahraga Badminton</h1>
+                      <div class="wrapper mx-auto">
+                          <canvas id='e'></canvas>
+                          <div class="label"></div>
+                      </div>
+                  </div>
+
+                  <a class="carousel-control-prev text-dark" role="button" data-bs-target="#carouselExampleIndicators"
+                          data-bs-slide="next">
+                          <span class="carousel-control" aria-hidden="true">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 81 80" fill="none">
+                                  <g filter="url(#filter0_d_342_3036)">
+                                    <circle cx="40.25" cy="45" r="30" transform="rotate(-180 40.25 45)" fill="#DF7B00"/>
+                                  </g>
+                                  <path d="M47.9161 59.647C48.1302 59.4162 48.25 59.1063 48.25 58.7837C48.25 58.4611 48.1302 58.1513 47.9161 57.9205L35.9568 45L47.9161 32.0821C48.1302 31.8513 48.25 31.5415 48.25 31.2189C48.25 30.8962 48.1302 30.5864 47.9161 30.3556C47.8121 30.2431 47.6877 30.1536 47.5502 30.0925C47.4128 30.0315 47.2652 30 47.116 30C46.9669 30 46.8192 30.0315 46.6818 30.0925C46.5444 30.1536 46.42 30.2431 46.316 30.3556L33.5984 44.098C33.375 44.3393 33.25 44.663 33.25 45C33.25 45.337 33.375 45.6607 33.5984 45.902L46.316 59.6444C46.42 59.7569 46.5444 59.8464 46.6818 59.9075C46.8192 59.9685 46.9669 60 47.116 60C47.2652 60 47.4128 59.9685 47.5502 59.9075C47.6877 59.8464 47.8121 59.7569 47.9161 59.6444V59.647Z" fill="#FAFAFA"/>
+                                  <defs>
+                                    <filter id="filter0_d_342_3036" x="0.25" y="0" width="80" height="80" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                      <feOffset dy="-5"/>
+                                      <feGaussianBlur stdDeviation="5"/>
+                                      <feComposite in2="hardAlpha" operator="out"/>
+                                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+                                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_342_3036"/>
+                                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_342_3036" result="shape"/>
+                                    </filter>
+                                  </defs>
+                                </svg>
+                          </span>
+                        </a>
+                        <a class="carousel-control-next text-dark" role="button" data-bs-target="#carouselExampleIndicators"
+                          data-bs-slide-to="next">
+                          <span class="carousel-control" aria-hidden="true">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 81 80" fill="none">
+                              <g filter="url(#filter0_d_342_3033)">
+                                <circle cx="40.25" cy="45" r="30" fill="#DF7B00"/>
+                              </g>
+                              <path d="M32.5839 30.353C32.3698 30.5838 32.25 30.8937 32.25 31.2163C32.25 31.5389 32.3698 31.8487 32.5839 32.0795L44.5432 45L32.5839 57.9179C32.3698 58.1487 32.25 58.4585 32.25 58.7811C32.25 59.1038 32.3698 59.4136 32.5839 59.6444C32.6879 59.7569 32.8123 59.8464 32.9498 59.9075C33.0872 59.9685 33.2348 60 33.384 60C33.5331 60 33.6808 59.9685 33.8182 59.9075C33.9556 59.8464 34.08 59.7569 34.184 59.6444L46.9016 45.902C47.125 45.6607 47.25 45.337 47.25 45C47.25 44.663 47.125 44.3393 46.9016 44.098L34.184 30.3556C34.08 30.2431 33.9556 30.1536 33.8182 30.0925C33.6808 30.0315 33.5331 30 33.384 30C33.2348 30 33.0872 30.0315 32.9498 30.0925C32.8123 30.1536 32.6879 30.2431 32.5839 30.3556V30.353Z" fill="#FAFAFA"/>
+                              <defs>
+                                <filter id="filter0_d_342_3033" x="0.25" y="0" width="80" height="80" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                  <feOffset dy="-5"/>
+                                  <feGaussianBlur stdDeviation="5"/>
+                                  <feComposite in2="hardAlpha" operator="out"/>
+                                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+                                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_342_3033"/>
+                                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_342_3033" result="shape"/>
+                                </filter>
+                              </defs>
+                            </svg>
+                          </span>
+                        </a>
+              </div>
+              
+          </div>
         </div>
+        <div class="dekorBnr2"></div>
     </div>
-
-    <div class="row">
-        <!-- <h2>ahahah</h2> -->
-
-        <!-- <div class="col" style="width: 1449px;
-        /* height: 2094px; */
-        height: 200px;
-        flex-shrink: 2;
-        /* display:flex; */
-        z-index: -20;
-        /* left: 25; */
-        top:200px;
-        border-radius: 50px 50px 0px 0px;
-        background: var(--secondary, #151D24);">
-
-        </div> -->
-        <div class="col">
-            ssds
-        </div>
-    </div>
+    
 </section>

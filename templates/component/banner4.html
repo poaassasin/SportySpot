@@ -1,0 +1,358 @@
+<style>
+    .horizontal-slider {
+        width: 100%;
+        height: 500px;
+        margin: 2vh auto;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        color: white;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      .active {
+        scroll-snap-type: none;
+      }
+      .horizontal-slider::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+      }
+
+      .card2 {
+        margin-left: 1rem;
+        height: 90%;
+        scroll-snap-align: start;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        backdrop-filter: blur(16px) saturate(180%);
+        border-radius: 12px;
+        border: 1px solid rgba(209, 213, 219, 0.3);
+        transform: translateZ(0);
+        background-color: rgb(255, 255, 255);
+        /* shadow 1 */
+        box-shadow: 0px 9px 8px 2px rgba(45, 45, 45, 0.20);
+      }
+      
+      .card2 img {
+        width: 300px;
+      }
+      
+      .hor-scroll .btn {
+        position: absolute;
+      
+        top: 185px;
+        transform: translateY(-50%);
+      
+        height: 30px;
+        width: 30px;
+      
+        border-radius: 2px;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      
+        z-index: 1;
+      }
+      .wrapperBnr4 {
+        min-height: 80vh;
+        max-width: 1040px;
+        margin: auto;
+      }
+      .buttonCardMain2 {
+        display: flex;
+        margin:auto;
+        max-width: 100%;
+        padding: 15px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 30px;
+        background: var(--button, #DF7B00);
+      }
+</style>
+<section class="banner4" id="pelatihkami">
+    <div class="row d-flex mx-auto reveal">
+        <div class="col mx-auto mt-5">
+            <div class="row mx-auto mt-3 d-flex">
+                <div class="col mx-auto">
+                    <h1 class="text-center text-dark link-dark" style="color: var(--secondary, #151D24);
+
+                    /* Heading H1 */
+                    font-family: Outfit;
+                    font-size: 64px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;">Pelatih Kami</h1>
+                </div>
+            </div>
+            <div class="row mx-auto mt-3 d-flex">
+                <div class="col mx-auto">
+                    <h5 class="text-center text-dark link-dark" style="color: var(--secondary, #151D24);
+                    font-family: Outfit;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 35px; /* 145.833% */">Temukan Pelatih Yang Sesuai Untukmu Di Sini!! </h5>
+                </div>
+            </div>
+            <div class="row mx-auto mt-3 d-flex">
+                <div class="col mx-auto">
+                    <div class="wrapperBnr4">
+                        <div class="horizontal-slider">
+
+                            <div class="card2">
+                                <div class="row mx-auto d-flex mb-4" style="width:300px;">
+                                    <div class="col mx-auto d-flex mb-4" style="
+                                    right: 78px;
+                                    top: 4px;border-radius: 2100px;
+                                    align-items:center; justify-content: center;">
+                                        <img style="width: 138px;
+                                        height: 138px;" src="/static/Image/ropebg4.png" />
+                                    </div>
+                                </div>
+                            <div>
+                                <h3 style="color: var(--secondary, #151D24);
+
+                                /* Paragraph/L/SemiBold */
+                                font-family: Outfit;
+                                font-size: 24px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;">Sarah Johnson</h3>
+                                <p style="color: var(--tertier, #797F86);
+
+                                /* Paragraph/M/Regular */
+                                font-family: Outfit;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;">Pelatih Gimnastik</p>
+                                <h3 style="color: var(--secondary, #151D24);
+
+                                /* Paragraph/L/SemiBold */
+                                font-family: Outfit;
+                                font-size: 24px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;">Kota ABC</h3>
+                                <p style="color: var(--tertier, #797F86);
+
+                                /* Paragraph/M/Regular */
+                                font-family: Outfit;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;">Tempat Pelatihan</p>
+                                <a type="button" href="/pelatih/1/" class="buttonCardMain2" style="font-size: 18px;
+                                font-style: normal;
+                                font-weight: 500;
+                                text-decoration: none; color: var(--primary, #FAFAFA); border:0;">Lihat Portofolio</a>
+                            </div>
+                            </div>
+                            <div class="card2">
+                                <div class="row mx-auto d-flex mb-4" style="width:300px;">
+                                    <div class="col mx-auto d-flex mb-4" style="
+                                    right: 78px;
+                                    top: 4px;border-radius: 2100px;
+                                    align-items:center; justify-content: center;">
+                                        <img style="width: 138px;
+                                        height: 138px;" src="/static/Image/sccrbg1.png" />
+                                    </div>
+                                </div>
+                            <div>
+                                <h3 style="color: var(--secondary, #151D24);
+
+                                /* Paragraph/L/SemiBold */
+                                font-family: Outfit;
+                                font-size: 24px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;">John Smith</h3>
+                                <p style="color: var(--tertier, #797F86);
+
+                                /* Paragraph/M/Regular */
+                                font-family: Outfit;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;">Pelatih Sepak Bola (sejak 2015)</p>
+                                <h3 style="color: var(--secondary, #151D24);
+
+                                /* Paragraph/L/SemiBold */
+                                font-family: Outfit;
+                                font-size: 24px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;">Kota XYZ</h3>
+                                <p style="color: var(--tertier, #797F86);
+
+                                /* Paragraph/M/Regular */
+                                font-family: Outfit;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;">Tempat Pelatihan</p>
+                                <a type="button" href="/pelatih/1/" class="buttonCardMain2" style="font-size: 18px;
+                                font-style: normal;
+                                font-weight: 500;
+                                text-decoration: none; color: var(--primary, #FAFAFA); border:0;">Lihat Portofolio</a>
+                            </div>
+                            </div>
+                            <div class="card2">
+                                <div class="row mx-auto d-flex mb-4" style="width:300px;">
+                                    <div class="col mx-auto d-flex mb-4" style="
+                                    right: 78px;
+                                    top: 4px;border-radius: 2100px;
+                                    align-items:center; justify-content: center;">
+                                        <img style="width: 138px;
+                                        height: 138px;" src="/static/Image/gymbg2.png" />
+                                    </div>
+                                </div>
+                            <div>
+                                <h3 style="color: var(--secondary, #151D24);
+
+                                /* Paragraph/L/SemiBold */
+                                font-family: Outfit;
+                                font-size: 24px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;">Berliana Putri</h3>
+                                <p style="color: var(--tertier, #797F86);
+
+                                /* Paragraph/M/Regular */
+                                font-family: Outfit;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;">Pelatih Renang (sejak 2020)</p>
+                                <h3 style="color: var(--secondary, #151D24);
+
+                                /* Paragraph/L/SemiBold */
+                                font-family: Outfit;
+                                font-size: 24px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;">Kota KHJ</h3>
+                                <p style="color: var(--tertier, #797F86);
+
+                                /* Paragraph/M/Regular */
+                                font-family: Outfit;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;">Tempat Pelatihan</p>
+                                <a type="button" href="/pelatih/1/" class="buttonCardMain2" style="font-size: 18px;
+                                font-style: normal;
+                                font-weight: 500;
+                                text-decoration: none; color: var(--primary, #FAFAFA); border:0;">Lihat Portofolio</a>
+                            </div>
+                            </div>
+                            <div class="card2">
+                                <div class="row mx-auto d-flex mb-4" style="width:300px;">
+                                    <div class="col mx-auto d-flex mb-4" style="
+                                    right: 78px;
+                                    top: 4px;border-radius: 2100px;
+                                    align-items:center; justify-content: center;">
+                                        <img style="width: 138px;
+                                        height: 138px;" src="/static/Image/baseballbg3.png" />
+                                    </div>
+                                </div>
+                            <div>
+                                <h3 style="color: var(--secondary, #151D24);
+
+                                /* Paragraph/L/SemiBold */
+                                font-family: Outfit;
+                                font-size: 24px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;">Daniel Katamandra</h3>
+                                <p style="color: var(--tertier, #797F86);
+
+                                /* Paragraph/M/Regular */
+                                font-family: Outfit;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;">Pelatih Baseball (sejak 2008)</p>
+                                <h3 style="color: var(--secondary, #151D24);
+
+                                /* Paragraph/L/SemiBold */
+                                font-family: Outfit;
+                                font-size: 24px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;">Kota DBS</h3>
+                                <p style="color: var(--tertier, #797F86);
+
+                                /* Paragraph/M/Regular */
+                                font-family: Outfit;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;">Tempat Pelatihan</p>
+                                <a type="button" href="/pelatih/1/" class="buttonCardMain2" style="font-size: 18px;
+                                font-style: normal;
+                                font-weight: 500;
+                                text-decoration: none; color: var(--primary, #FAFAFA); border:0;">Lihat Portofolio</a>
+                            </div>
+                            </div>
+                            <div class="card2">
+                                <div class="row mx-auto d-flex mb-4" style="width:300px;">
+                                    <div class="col mx-auto d-flex mb-4" style="
+                                    right: 78px;
+                                    top: 4px;border-radius: 2100px;
+                                    align-items:center; justify-content: center;">
+                                        <img style="width: 138px;
+                                        height: 138px;" src="/static/Image/bg9idk.png" />
+                                    </div>
+                                </div>
+                            <div>
+                                <h3 style="color: var(--secondary, #151D24);
+
+                                /* Paragraph/L/SemiBold */
+                                font-family: Outfit;
+                                font-size: 24px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;">Marcel Budinata</h3>
+                                <p style="color: var(--tertier, #797F86);
+
+                                /* Paragraph/M/Regular */
+                                font-family: Outfit;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;">Pelatih Futsal (sejak 2009)</p>
+                                <h3 style="color: var(--secondary, #151D24);
+
+                                /* Paragraph/L/SemiBold */
+                                font-family: Outfit;
+                                font-size: 24px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;">Kota HJU</h3>
+                                <p style="color: var(--tertier, #797F86);
+
+                                /* Paragraph/M/Regular */
+                                font-family: Outfit;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;">Tempat Pelatihan</p>
+                                <a type="button" href="/pelatih/1/" class="buttonCardMain2" style="font-size: 18px;
+                                font-style: normal;
+                                font-weight: 500;
+                                text-decoration: none; color: var(--primary, #FAFAFA); border:0;">Lihat Portofolio</a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

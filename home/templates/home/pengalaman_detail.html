@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'home_pengalaman_list' %}">
+    pengalaman Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>nama_pengalaman</td><td>{{ object.nama_pengalaman }}</td></tr>
+    <tr><td>periode</td><td>{{ object.periode }}</td></tr>
+    <tr><td>keterangan</td><td>{{ object.keterangan }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>foto</td><td>{{ object.foto }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>tahun</td><td>{{ object.tahun }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
